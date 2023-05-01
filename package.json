@@ -1,0 +1,22 @@
+{
+  "name": "crud-redis",
+  "version": "1.0.0",
+  "description": "percobaan crud dengan database redis, karena saya masih awam redis di node js ini",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ardabilli",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "redis": "^4.0.4",
+    "redis-om": "^0.2.0",
+    "swagger-ui-express": "^4.3.0",
+    "yamljs": "^0.3.0"
+  }
+}
