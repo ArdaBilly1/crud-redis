@@ -17,4 +17,14 @@ export class personService {
         setResponse.generateResponseOk(process, res)
     }
     
+    async delete(req, res) {
+        await personRepository.remove(req.params.id)
+        setResponse.generateResponseOk({entityId:req.params.id}, res)
+    }
+    
+    async getDetail(req, res) {
+        const person = await personRepository.fetch(req.params.id)
+
+        setResponse.generateResponseOk(person, res)
+    }
 }

@@ -14,4 +14,10 @@ export class personRepository {
         var person = await repo.createAndSave(data);
         return person;
     }
+
+    async delete(id) {
+        await repo.remove(id)
+    }
 }
+
+
