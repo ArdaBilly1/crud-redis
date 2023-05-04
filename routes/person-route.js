@@ -1,18 +1,13 @@
 import { Router } from "express";
 import { personRepository } from "../om/person.js";
+import {personRepository as repo} from "../repository/person.js"
+import { personService } from "../service/person.js";
 
 const router = Router()
+const personSvc = new personService()
 
-router.post('/', async(req, res) => {
-    const person = await personRepository.createAndSave(req.body)
-    res.send(person)
-})
-
-router.get('/all', async(req, res) => {
-    const data = await personRepository.search().return.all()
-
-    res.send(data)
-})
+router.post('/', personSvc.createNew)
+router.get('/all', personSvc.getAllPerson)
 
 router.get('/:id', async(req, res) => {
     const person = await personRepository.fetch(req.params.id)
