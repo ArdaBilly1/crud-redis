@@ -8,6 +8,7 @@ const personSvc = new personService()
 router.post('/', personSvc.createNew)
 router.get('/all', personSvc.getAllPerson)
 router.delete('/:id', personSvc.delete)
+router.get("/get-by-last/:lastName", personSvc.getByLast)
 
 router.get('/:id/detail', async(req, res) => {
     const person = await personRepository.fetch(req.params.id)
@@ -29,16 +30,6 @@ router.put('/:id', async(req, res) => {
     await personRepository.save(person)
 
     res.send(person)
-})
-
-router.get("/get-by-last/:lastName", async(req, res) => {
-    const data = await personRepository.
-                search().
-                where("lastName").
-                equal(req.params.lastName).
-                return.all()
-    
-    res.send(data)
 })
 
 export {router}

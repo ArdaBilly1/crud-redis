@@ -14,4 +14,3 @@ export const personSchema = new Schema(Person, {
     personalStatement: { type: 'text' }
 })
 
-// return personSchema

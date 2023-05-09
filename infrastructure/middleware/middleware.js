@@ -1,5 +1,5 @@
 import morgan from "morgan";
-import { logger } from "./monolog.js";
+import { logger } from "../logger/monolog.js";
 
 const stream = {
     write:(message) => logger.http(message),
